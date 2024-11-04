@@ -4,6 +4,7 @@ import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
+import java.net.URI;
 import java.util.List;
 import java.util.Map;
 
@@ -40,11 +41,12 @@ public class BibliothequeREST {
 
     @POST
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
+    @Produces(MediaType.TEXT_PLAIN)
     public Response addLivre(@FormParam("titre") String titre,
                              @FormParam("auteur") String auteur,
                              @FormParam("nbExemplaires") int nbExemplaires) {
         bibliotheque.addLivre(titre, auteur, nbExemplaires);
-        return Response.status(Response.Status.CREATED).build();
+        return Response.status(Response.Status.FOUND).location(URI.create("/bibliotheque")).build();
     }
 
     @POST
@@ -53,7 +55,7 @@ public class BibliothequeREST {
     public Response updateNbExemplaires(@FormParam("titre") String titre,
                                         @FormParam("nbExemplaires") int nbExemplaires) {
         bibliotheque.mettreAJourNbExemplaires(titre, nbExemplaires);
-        return Response.ok().build();
+        return Response.status(Response.Status.FOUND).location(URI.create("/bibliotheque")).build();
     }
 
 }

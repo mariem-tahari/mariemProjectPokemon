@@ -1,5 +1,7 @@
 package com.aled;
 
+import jakarta.ws.rs.core.Response;
+
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -37,10 +39,13 @@ public class Bibliotheque {
         livres.remove(titre);
     }
 
-    public void mettreAJourNbExemplaires(String titre, int nbExemplaires) {
+    public Response mettreAJourNbExemplaires(String titre, int nbExemplaires) {
         Livre livre = livres.get(titre);
         if (livre != null) {
             livre.setNbExemplaires(nbExemplaires);
+        } else {
+            return Response.status(Response.Status.NOT_FOUND).entity("Livre non trouvé").build();
         }
+        return null;
     }
 }
