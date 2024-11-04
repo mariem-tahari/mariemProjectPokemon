@@ -36,22 +36,8 @@
             <groupId>${quarkus.platform.group-id}</groupId>
             <artifactId>${quarkus.platform.artifact-id}</artifactId>
             <version>${quarkus.platform.version}</version>
-            <scope>import</scope>
-            <type>pom</type>
-        </dependency>
-
-        <!-- Lombok -->
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.34</version>
             <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.projectlombok</groupId>
-            <artifactId>lombok</artifactId>
-            <version>1.18.34</version>
-            <scope>compile</scope>
+            <type>pom</type>
         </dependency>
 
         <!-- Gson -->

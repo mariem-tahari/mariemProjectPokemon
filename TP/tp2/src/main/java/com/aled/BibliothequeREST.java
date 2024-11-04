@@ -1,17 +1,18 @@
 package com.aled;
 
+import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
 import jakarta.ws.rs.core.Response;
 
 import java.net.URI;
 import java.util.List;
-import java.util.Map;
 
 
 @Path("/bibliotheque")
 public class BibliothequeREST {
-    private Bibliotheque bibliotheque = Bibliotheque.getInstance();
+    @Inject
+    Bibliotheque bibliotheque;
 
     @GET
     @Produces(MediaType.APPLICATION_JSON)
