@@ -88,4 +88,5 @@ public class Pokemon {
     public Integer getMontantEnchere(Long utilisateurId) {
         return historique_encheres.get(utilisateurId);
     }
+
 }
