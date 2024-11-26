@@ -3,6 +3,7 @@ package com.projet;
 
 import jakarta.persistence.*;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Entity
@@ -16,6 +17,20 @@ public class Pokemon {
     private String description;
     private int miseAPrix;
     private int valeurReelle;
+
+
+    @ElementCollection
+    @CollectionTable(name = "pokemon_types", joinColumns = @JoinColumn(name = "pokemon_id"))
+    @Column(name = "type")
+    private List<String> types;
+
+
+    @ElementCollection
+    @CollectionTable(name = "pokemon_stats", joinColumns = @JoinColumn(name = "pokemon_id"))
+    @MapKeyColumn(name = "stat_name")
+    @Column(name = "stat_value")
+    private Map<String, Integer> stats;
+
 
     @ElementCollection
     @CollectionTable(name = "pokemon_encheres", joinColumns = @JoinColumn(name = "pokemon_id"))
@@ -87,6 +102,22 @@ public class Pokemon {
 
     public Integer getMontantEnchere(Long utilisateurId) {
         return historique_encheres.get(utilisateurId);
+    }
+
+    public List<String> getTypes() {
+        return types;
+    }
+
+    public void setTypes(List<String> types) {
+        this.types = types;
+    }
+
+    public Map<String, Integer> getStats() {
+        return stats;
+    }
+
+    public void setStats(Map<String, Integer> stats) {
+        this.stats = stats;
     }
 
 }

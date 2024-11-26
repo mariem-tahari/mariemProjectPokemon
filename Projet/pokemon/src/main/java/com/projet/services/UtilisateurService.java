@@ -1,5 +1,6 @@
-package com.projet;
+package com.projet.services;
 
+import com.projet.Utilisateur;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.persistence.EntityManager;

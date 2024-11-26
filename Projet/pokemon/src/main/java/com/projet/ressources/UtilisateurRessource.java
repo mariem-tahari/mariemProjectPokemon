@@ -1,5 +1,7 @@
-package com.projet;
+package com.projet.ressources;
 
+import com.projet.Utilisateur;
+import com.projet.services.UtilisateurService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;

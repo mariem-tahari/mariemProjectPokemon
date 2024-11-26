@@ -1,5 +1,7 @@
-package com.projet;
+package com.projet.ressources;
 
+import com.projet.Pokemon;
+import com.projet.services.PokemonService;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.*;
 import jakarta.ws.rs.core.MediaType;
