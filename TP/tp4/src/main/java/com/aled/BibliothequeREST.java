@@ -31,6 +31,7 @@ public class BibliothequeREST {
         return Response.status(Response.Status.FOUND).location(URI.create("/bibliotheque")).build();
     }
 
+
     @POST
     @Path("/update")
     @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
