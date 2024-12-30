@@ -19,6 +19,8 @@ public class Pokemon {
     private int valeurReelle;
 
 
+
+
     @ElementCollection
     @CollectionTable(name = "pokemon_types", joinColumns = @JoinColumn(name = "pokemon_id"))
     @Column(name = "type")
@@ -46,6 +48,7 @@ public class Pokemon {
         this.valeurReelle = valeurReelle;
         this.miseAPrix = (int) (valeurReelle * (0.6 + Math.random() * 0.8));
     }
+
 
     // Getters et Setters
     public Long getId() {

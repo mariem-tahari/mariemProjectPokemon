@@ -32,6 +32,8 @@ java {
 
 test {
     systemProperty "java.util.logging.manager", "org.jboss.logmanager.LogManager"
+    reports.html.required.set(false)
+
 }
 compileJava {
     options.encoding = 'UTF-8'

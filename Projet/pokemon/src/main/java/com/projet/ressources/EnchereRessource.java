@@ -44,7 +44,6 @@ public class EnchereRessource {
         enchereService.supprimerEnchere(id);
     }
 
-    // Classe interne pour la requête de création d'enchère
     public static class EnchereRequest {
         private Utilisateur utilisateur;
         private Pokemon pokemon;

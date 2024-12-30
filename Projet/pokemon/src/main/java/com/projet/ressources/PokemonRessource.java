@@ -17,13 +17,24 @@ public class PokemonRessource {
     @Inject
     PokemonService pokemonService;
 
+
     @GET
     public List<Pokemon> listerPokemons() {
         return pokemonService.listerPokemons();
     }
 
+    @GET
+    @Path("/random")
+    public Pokemon pokemonAleatoire() {
+        return pokemonService.genererPokemonAleatoire();
+    }
+
+
+
+
+
     @POST
-    public Pokemon creerPokemon(Pokemon pokemon) {
+    public Pokemon creerPokemon(Pokemon pokemon){
         return pokemonService.creerPokemon(pokemon.getNom(), pokemon.getDescription(), pokemon.getValeurReelle());
     }
 

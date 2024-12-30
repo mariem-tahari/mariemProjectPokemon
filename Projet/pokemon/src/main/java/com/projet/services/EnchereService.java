@@ -17,6 +17,7 @@ public class EnchereService {
     @Inject
     EntityManager em;
 
+
     @Transactional
     public Enchere creerEnchere(Utilisateur utilisateur, Pokemon pokemon, int montant, LocalDateTime expiration) {
         Enchere enchere = new Enchere(utilisateur, pokemon, montant, expiration);
